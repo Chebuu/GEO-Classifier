@@ -34,7 +34,7 @@ getDirListing <- function(url) {
 }
 
 getGEO.simple <- function(GEO = NULL, destdir = tempdir(), GSElimits = NULL, AnnotGPL = FALSE, getGPL = TRUE) {
-  # TODO: some parameters from the original functions are not used.
+  # TODO: Args should be passed to getGEOfile. Some parameters from the original functions are not used.
   # This function replaces getGEO after setting getDirListing above.
   return(
     parseGEO(
