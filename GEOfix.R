@@ -1,3 +1,4 @@
+library(GEOquery)
 getDirListing <- function(url) {
   # https://github.com/seandavi/GEOquery/issues/38
   
@@ -32,7 +33,8 @@ getDirListing <- function(url) {
   return(b)
 }
 
-getGEO.simple <- function(GEO = NULL, filename = NULL, destdir = tempdir(), GSElimits = NULL, GSEMatrix = TRUE, AnnotGPL = FALSE, getGPL = TRUE) {
+getGEO.simple <- function(GEO = NULL, destdir = tempdir(), GSElimits = NULL, AnnotGPL = FALSE, getGPL = TRUE) {
+  # TODO: some parameters from the original functions are not used.
   # This function replaces getGEO after setting getDirListing above.
   return(
     parseGEO(
