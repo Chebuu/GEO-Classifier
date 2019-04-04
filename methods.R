@@ -67,11 +67,6 @@ retryOnError <- function(func, args, n.tries=Inf) {
   return(res)
 }
 
-getGEO.simple <- function(GEO = NULL, filename = NULL, destdir = tempdir(), GSElimits = NULL, GSEMatrix = TRUE, AnnotGPL = FALSE, getGPL = TRUE) {
-  # This function is a wrapper for the GEOquery workhorse functions. Using GEOquery::getGEO() for some GSEs throws a 404 error that is not overcome with retries. For that reason, I created getGEO.simple which gets the jobe done without errors.
-  return(parseGEO(getGEOfile(GEO), GSElimits, destdir, AnnotGPL, getGPL))
-}
-
 argmax <- function(Y) {
   # Returns the column index of the maximum value in each row.
   # @ param {Y} A numeric matrix of model outputs. 
