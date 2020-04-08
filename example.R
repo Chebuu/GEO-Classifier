@@ -1,4 +1,5 @@
 source('methods.R')
+
 RUN_LOCAL <- F # Has a local dataset been saved that should be used instead of querying GEO?
 SAVE_DATASET <- F # Write the dataset to a file?
 RETRY_ON_ERROR <- T # If a GEO request fails, should the script indefinitely continue trying to download the files?
