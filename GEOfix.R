@@ -12,7 +12,6 @@ getDirListing <- function(url) {
   # https://ftp.ncbi.nlm.nih.gov/geo/series/GSE94nnn/GSE94802/matrix//geo/series/GSE94nnn/GSE94802/ 
   # is attempted and fails because it doesn't exist. To fix, just make sure the only links returned 
   # don't end with a forward slash (this approach also fixes the same download errors for getGEOSuppFiles). 
-  # The following fixed it for me (added line ending with # !!!):
   
   message(url)
   # Takes a URL and returns a character vector of filenames
@@ -34,7 +33,6 @@ getDirListing <- function(url) {
 }
 
 getGEO.simple <- function(GEO = NULL, destdir = tempdir(), GSElimits = NULL, AnnotGPL = FALSE, getGPL = TRUE) {
-  # TODO: Args should be passed to getGEOfile. Some parameters from the original functions are not used.
   # This function replaces getGEO after setting getDirListing above.
   return(
     parseGEO(
@@ -46,11 +44,3 @@ getGEO.simple <- function(GEO = NULL, destdir = tempdir(), GSElimits = NULL, Ann
     )
   )
 }
-
-# EXAMPLE
-# gfile <- getGEO.simple('GSE72078')
-# pData(gfile)
-# GDS2eSet(gfile)
-# gfile@gsms
-# names(Meta(gfile))
-
