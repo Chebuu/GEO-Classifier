@@ -215,7 +215,7 @@ trainAndTestClassifier <- function(dataset.labeled, features.subset, test.cols=N
   if(any(colnames(x.test) %in% colnames(x.train))){
     which.duplicate <- colnames(x.test) %in% colnames(x.train)
     print(which.duplicate)
-    warning('The above GSMs are present in both the training and test sets. This may cause overfitting.')
+    warning('The above samples are present in both the training and test sets.')
   }
   
   if(is.null(caret.trainControl)){
